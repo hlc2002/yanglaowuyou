@@ -1,4 +1,4 @@
-import {general_get, general_post} from "@/api/env";
+import { general_get, general_post } from "@/api/env";
 
 export const login = (params) => {
     return general_get("/verify/login", params)
