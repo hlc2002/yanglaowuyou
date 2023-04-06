@@ -85,7 +85,10 @@ export default {
   mounted() {
     this.token = sessionStorage.getItem("token");
     this.user_type = sessionStorage.getItem("user_type");
-    getDeviceList("医药", this.token, this.user_type)
+    let device_name = {
+      device_name: "医药",
+    };
+    getDeviceList(device_name, this.token, this.user_type)
       .then((res) => {
         if (res.data != null) {
           this.deviceList = res.data;

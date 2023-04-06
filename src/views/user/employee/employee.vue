@@ -105,7 +105,7 @@ export default {
       .then((res) => {
         if (res.code === 200) {
           this.employeeList = res.data;
-          this.employeeList.array.forEach((element) => {
+          this.employeeList.forEach((element) => {
             element.employee_unit = "一级护工";
           });
         } else {

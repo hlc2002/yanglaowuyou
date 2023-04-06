@@ -135,9 +135,10 @@ export default {
         this.bedList = res.data;
       }
     });
+    setTimeout(function () {}, 1000);
     getOrder(this.token, this.user_type).then((res) => {
       if (res.data != null) {
-        this.isOrder = true;
+        this.isOrder = res.data.order_pay_state;
       }
     });
   },
@@ -154,16 +155,21 @@ export default {
     getOrder(index, row) {
       if (
         this.bedList[index].bed_lock === "true" ||
-        this.bedList[index] === true
+        this.bedList[index].bed_lock === true
       ) {
         this.$notify({
           type: "info",
           message: "该床位已经被预定",
         });
-      } else if (this.isOrder == true) {
+      } else if (this.isOrder == false) {
         this.$notify({
           type: "error",
           message: "您存在未支付订单",
+        });
+      } else if (this.isOrder == true) {
+        this.$notify({
+          type: "error",
+          message: "您已预订床位，不可重复预订",
         });
       } else {
         this.addOrder = true;

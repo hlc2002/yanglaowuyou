@@ -30,14 +30,14 @@
           <el-descriptions-item label="床位信息">{{
             order.order_room_no + "号房间" + order.order_bed_no + "号床位"
           }}</el-descriptions-item>
-          <el-descriptions-item
-            v-show="this.order.order_pay_state == false"
-            label="点击支付"
-            ><el-button type="primary" round size="small" @click="pay"
-              >支付</el-button
-            ></el-descriptions-item
-          >
         </el-descriptions>
+        <el-row>
+          <div v-if="this.order.order_pay_state == false">
+            <el-button type="primary" round size="small" @click="pay"
+              >去支付</el-button
+            >
+          </div>
+        </el-row>
       </el-card>
     </div>
     <div v-else>
@@ -84,9 +84,7 @@ export default {
     let elder_id = {
       elder_id: sessionStorage.getItem("elder_id"),
     };
-    setTimeout(function () {
-      console.log("init order");
-    }, 100);
+    setTimeout(function () {}, 1000);
     getElder(elder_id, this.token, this.user_type).then((res) => {
       if (res.code === 200) {
         this.elder_name = res.data.elder_name;
