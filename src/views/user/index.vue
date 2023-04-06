@@ -9,25 +9,25 @@
         mode="horizontal"
       >
         <el-menu-item>医养结合-敬老院客户服务中心</el-menu-item>
-        <el-submenu index="1">
+        <el-submenu>
           <template slot="title">常用业务</template>
           <el-menu-item index="/user/bed">床位</el-menu-item>
-          <el-menu-item index="1-3">职工</el-menu-item>
-          <el-menu-item index="1-4">医药</el-menu-item>
+          <el-menu-item index="/user/employee">护工</el-menu-item>
+          <el-menu-item index="/user/deviceList">医药与用具</el-menu-item>
         </el-submenu>
-        <el-submenu index="2">
+        <el-submenu>
           <template slot="title">老人服务</template>
           <el-menu-item index="/user/elder">老人信息</el-menu-item>
-          <el-menu-item index="2-2">预订床位</el-menu-item>
-          <el-menu-item index="2-3">医药计划</el-menu-item>
-          <el-menu-item index="2-4">服务护工</el-menu-item>
-          <el-menu-item index="2-5">健康报表</el-menu-item>
+          <el-menu-item index="/user/bed">预订床位</el-menu-item>
+          <el-menu-item index="/user/device">医药计划</el-menu-item>
+          <el-menu-item index="/user/empoyeeInfo">服务护工</el-menu-item>
+          <el-menu-item index="/user/health">健康报表</el-menu-item>
         </el-submenu>
-        <el-menu-item index="3">我的订单</el-menu-item>
-        <el-menu-item index="4">服务清单</el-menu-item>
-        <el-menu-item index="5">养生定制</el-menu-item>
-        <el-menu-item index="6">文娱活动</el-menu-item>
-        <el-menu-item index="7">客服咨询</el-menu-item>
+        <el-menu-item index="/user/order">我的订单</el-menu-item>
+        <el-menu-item index="/user/service">服务清单</el-menu-item>
+        <el-menu-item index="/user/live">养生定制</el-menu-item>
+        <el-menu-item index="/user/happly">文娱活动</el-menu-item>
+        <el-menu-item index="/user/customer">客服咨询</el-menu-item>
       </el-menu>
     </el-header>
     <el-main style="height: 500px">
