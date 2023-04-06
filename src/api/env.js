@@ -1,31 +1,53 @@
 import axios from "axios"
 
 axios.defaults.baseURL = "http://127.0.0.1:9001"
-// 通用请求方法
-const post= (url, params,token) => {
+
+const post = (url, params, token, user_type) => {
     return axios({
         method: "post",
         url: url,
         headers: {
             'Content-Type': 'application/json',
-            'token': token
+            'token': token,
+            'user_type': user_type
         },
         data: params,
 
     }).then(res => res.data);
 }
-const get = (url,params,token) => {
+const general_post = (url, params) => {
     return axios({
-        method:"get",
-        url:url,
-        headers:{
+        method: "post",
+        url: url,
+        headers: {
             'Content-Type': 'application/json',
-            'token':token
+        },
+        data: params,
+
+    }).then(res => res.data);
+}
+const get = (url, params, token, user_type) => {
+    return axios({
+        method: "get",
+        url: url,
+        headers: {
+            'Content-Type': 'application/json',
+            'token': token,
+            'user_type': user_type
         },
         params: params
     }).then(res => res.data);
 }
-
+const general_get = (url, params) => {
+    return axios({
+        method: "get",
+        url: url,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        params: params
+    }).then(res => res.data);
+}
 export {
-    post,get
+    post, get, general_post, general_get
 }
