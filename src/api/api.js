@@ -22,6 +22,11 @@ export const getMealList = (token, user_type) => {
 export const getOrder = (token, user_type) => {
     return get("/elderSon/getOrder", null, token, user_type)
 }
+
+export const getNormalEmployeeList = (token, user_type) => {
+    return get("/elderSon/getNormalEmployeeList", null, token, user_type)
+}
+
 export const getEmployeeByEmployeeName = (employeeName, token, user_type) => {
     return get("/elderSon/getEmployeeByEmployeeName", employeeName, token, user_type)
 }
