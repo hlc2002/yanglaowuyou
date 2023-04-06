@@ -52,7 +52,7 @@ let gatheringSourceOption = {
   },
   series: [
     {
-      name: "最近7日占比",
+      name: "近5日占比",
       type: "pie",
       radius: "60%",
       center: ["25%", "55%"],

@@ -36,7 +36,9 @@ export const selectBed = (orderData, token, user_type) => {
 export const selectBedPayCallBack = (bed_no, token, user_type) => {
     return get("/elderSon/selectBedPayCallBack", bed_no, token, user_type)
 }
-
+export const getDeviceList = (device_name, token, user_type) => {
+    return get("/elderSon/getDeviceList", device_name, token, user_type)
+}
 export const getElder = (elder_id, token, user_type) => {
     return get("/elderSon/getElder", elder_id, token, user_type);
 }

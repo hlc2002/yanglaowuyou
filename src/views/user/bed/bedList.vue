@@ -97,7 +97,7 @@
 </template>
 
 <script>
-import { getAllBed, selectBed } from "@/api/api";
+import { getAllBed, getOrder, selectBed } from "@/api/api";
 import { getMealList } from "@/api/api";
 export default {
   name,
@@ -105,6 +105,7 @@ export default {
     return {
       token: "",
       user_type: "",
+      isOrder: false,
       bedList: [
         {
           bed_room_no: 1,
@@ -134,6 +135,11 @@ export default {
         this.bedList = res.data;
       }
     });
+    getOrder(this.token, this.user_type).then((res) => {
+      if (res.data != null) {
+        this.isOrder = true;
+      }
+    });
   },
   methods: {
     getMeal(index, row) {
@@ -146,10 +152,25 @@ export default {
       });
     },
     getOrder(index, row) {
-      this.addOrder = true;
-      console.log(index, row);
-      this.order.bed_no = this.bedList[index].bed_no;
-      this.order.bed_room_no = this.bedList[index].bed_room_no;
+      if (
+        this.bedList[index].bed_lock === "true" ||
+        this.bedList[index] === true
+      ) {
+        this.$notify({
+          type: "info",
+          message: "该床位已经被预定",
+        });
+      } else if (this.isOrder == true) {
+        this.$notify({
+          type: "error",
+          message: "您存在未支付订单",
+        });
+      } else {
+        this.addOrder = true;
+        console.log(index, row);
+        this.order.bed_no = this.bedList[index].bed_no;
+        this.order.bed_room_no = this.bedList[index].bed_room_no;
+      }
     },
     insertOrder() {
       this.addOrder = false;
