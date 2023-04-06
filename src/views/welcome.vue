@@ -1,8 +1,17 @@
 <template>
   <div class="back">
     <el-header height="50px">
+      <div style="display: inline-block">
+        <el-avatar
+          style="margin-bottom: 15px"
+          src="https://img2.baidu.com/it/u=227029064,2468279856&fm=253&fmt=auto&app=138&f=JPEG?w=577&h=500"
+        ></el-avatar>
+        <el-badge style="margin-bottom: 60px; font-style: italic" class="item"
+          >医养结合-敬老院客户服务中心</el-badge
+        >
+      </div>
       <el-tabs
-        style="display: inline-block; margin-right: 40%"
+        style="display: inline-block; margin-left: 30%"
         @tab-click="toLogin"
       >
         <el-tab-pane label="精准服务"></el-tab-pane>
@@ -12,12 +21,6 @@
         <el-tab-pane label="安全无忧"></el-tab-pane>
         <el-tab-pane label="健康生活"></el-tab-pane>
       </el-tabs>
-      <el-avatar
-        shape="square"
-        :src="squareUrl"
-        style="display: inline-block; margin-bottom: 15px; margin-left: 100px"
-      >
-      </el-avatar>
     </el-header>
     <el-dialog title="用户登录" :visible.sync="dialogFormVisible">
       <el-form :model="userForm">
@@ -186,8 +189,6 @@ export default {
         name: "",
         password: "",
       },
-      squareUrl:
-        "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
       images: [
         { id: 0, url: require("@/assets/img/灯塔.png") },
         { id: 1, url: require("@/assets/img/雪山.jpg") },

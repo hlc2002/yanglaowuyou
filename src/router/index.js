@@ -41,6 +41,7 @@ export default new Router({
             path: '/user',
             name: '用户首页',
             component: userIndex,
+            redirect: '/user/bed',
             children: [
                 {
                     path: '/user/bed',
