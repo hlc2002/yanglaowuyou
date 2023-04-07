@@ -253,6 +253,7 @@ export default {
     },
     uploadSuccess() {
       this.fileList = [];
+      this.bed_no = null;
       getBedList(this.token, this.user_type).then((res) => {
         if (res.data != null) {
           this.bedList = res.data;
