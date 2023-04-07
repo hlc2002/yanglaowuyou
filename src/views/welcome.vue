@@ -245,8 +245,14 @@ export default {
       login_password_employee(params).then((res) => {
         if (res.code === 200) {
           console.log(res.data);
-          sessionStorage.setItem("token", JSON.stringify(res.data.employee_id));
+          sessionStorage.setItem("token", res.data.employee_id);
           sessionStorage.setItem("user_type", "employee");
+          sessionStorage.setItem("employee_name", res.data.employee_name);
+          sessionStorage.setItem("employee_unit", res.data.employee_unit);
+          sessionStorage.setItem(
+            "employee_auth_level",
+            res.data.employee_auth_level
+          );
           this.$router.push("/admin");
         } else {
           this.$notify({

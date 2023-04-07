@@ -23,12 +23,13 @@
           <template slot="title">信息管理</template>
           <el-menu-item index="/admin/elderList">客户信息管理</el-menu-item>
           <el-menu-item index="/admin/employeeList">护工信息管理</el-menu-item>
+          <el-menu-item index="/admin/customer">客户咨询管理</el-menu-item>
+          <el-menu-item index="/admin/orderList">订单列表</el-menu-item>
         </el-submenu>
-        <el-menu-item index="/admin/orderList">订单管理</el-menu-item>
-        <el-menu-item index="/admin/customer">客户咨询管理</el-menu-item>
         <el-menu-item index="/admin/happly">文娱计划管理</el-menu-item>
         <el-menu-item index="/admin/warter">平台流量可视化面板</el-menu-item>
         <el-menu-item index="/admin/email">院长邮箱</el-menu-item>
+        <el-menu-item index="/admin/adminInfo">账户管理</el-menu-item>
         <el-menu-item>
           <!-- <el-avatar
             size="medium"
@@ -48,7 +49,7 @@
     </el-main>
     <el-footer>
       <el-divider content-position="center"
-        >医 养 结 合 ，只 为 更 好 的 服 务 ，确 保 每 一 位 老 人 实 现 “ 养 老
+        >医 养 结 合 ，做 到 更 好 的 服 务 ，确 保 每 一 位 老 人 实 现 “ 养 老
         无 忧 ” , 享 受 快 乐 晚 年</el-divider
       >
     </el-footer>

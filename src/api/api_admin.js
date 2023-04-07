@@ -4,10 +4,10 @@ export const login = (params) => {
     return general_get("/verify/login", params)
 }
 export const login_password_employee = (params) => {
-    return general_get("/verify/login_password_elderSon", params)
+    return general_get("/verify/login_password_employee", params)
 }
 export const register_employee = (employee) => {
-    return general_post("/verify/register_elderSon", employee)
+    return general_post("/verify/register_employee", employee)
 }
 export const getBedList = (token, user_type) => {
     return get("/employee/getBedList", null, token, user_type)

@@ -29,7 +29,7 @@ import adminOrderList from '@/views/admin/order/orderList'
 import adminCustomer from '@/views/admin/customer/customer'
 import adminHapply from '@/views/admin/other/happly'
 import adminWarter from '@/views/admin/other/warter'
-import adminEmali from '@/views/admin/other/emali'
+import adminEmail from '@/views/admin/other/email'
 import adminInfo from '@/views/admin/adminInfo'
 import welcome from "@/views/welcome"
 export default new Router({
@@ -88,7 +88,7 @@ export default new Router({
                 {
                     path: '/admin/email',
                     name: "院长邮箱",
-                    component: adminEmali
+                    component: adminEmail
                 },
                 {
                     path: '/admin/adminInfo',
