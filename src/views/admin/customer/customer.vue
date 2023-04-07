@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <el-empty description="暂未开通业务"></el-empty>
+  </div>
 </template>
 
 <script>

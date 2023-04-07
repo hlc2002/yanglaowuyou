@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <el-empty description="本院暂未开放服务清单"></el-empty>
+  </div>
 </template>
 
 <script>

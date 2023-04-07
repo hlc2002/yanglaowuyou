@@ -29,8 +29,8 @@
           <el-menu-item index="/user/health">健康报表</el-menu-item>
         </el-submenu>
         <el-menu-item index="/user/order">我的订单</el-menu-item>
-        <el-menu-item index="/user/service">服务清单</el-menu-item>
-        <el-menu-item index="/user/live">养生定制</el-menu-item>
+        <el-menu-item index="/user/health">健康报表</el-menu-item>
+        <el-menu-item index="/user/live">养生之道</el-menu-item>
         <el-menu-item index="/user/happly">文娱活动</el-menu-item>
         <el-menu-item index="/user/customer">客服咨询</el-menu-item>
         <el-menu-item>
