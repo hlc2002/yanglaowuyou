@@ -2,8 +2,56 @@
   <el-container>
     <el-main>
       <el-row :gutter="20">
-        <el-card :span="6" class="box-card"
-          ><div><el-image :src="src2"></el-image></div>
+        <el-card :span="6"
+          ><el-container>
+            <el-main>
+              <el-row :gutter="20">
+                <el-card :span="6" class="box-card"
+                  ><div>
+                    <el-image :src="src2"></el-image>
+                    <el-image :src="src"></el-image> 老年人公园相伴唱歌
+                  </div></el-card
+                >
+                <el-card :span="6"
+                  ><div>
+                    <el-image :src="src2"></el-image> 老年人遛鸟形象
+                  </div></el-card
+                >
+                <el-card :span="6"
+                  ><div>
+                    <el-image :src="src3"></el-image> 老年人舞扇
+                  </div></el-card
+                >
+                <el-card :span="6"
+                  ><div>
+                    <el-image :src="src8"></el-image> 老年人旅游
+                  </div></el-card
+                >
+              </el-row>
+              <el-row :gutter="20">
+                <el-card :span="6"
+                  ><div>
+                    <el-image :src="src4"></el-image> 老年人运动羽毛球
+                  </div></el-card
+                >
+                <el-card :span="6"
+                  ><div>
+                    <el-image :src="src5"></el-image> 老人运动图片
+                  </div></el-card
+                >
+                <el-card :span="6"
+                  ><div>
+                    <el-image :src="src6"></el-image> 老人跳舞图片
+                  </div></el-card
+                >
+                <el-card :span="6"
+                  ><div>
+                    <el-image :src="src9"></el-image> 老年人遛弯
+                  </div></el-card
+                >
+              </el-row>
+            </el-main>
+          </el-container>
         </el-card>
         <el-card :span="6" class="box-card"
           ><div><el-image :src="src3"></el-image></div
@@ -30,6 +78,7 @@
     </el-main>
   </el-container>
 </template>
+
 <script>
 export default {
   name,
@@ -55,9 +104,3 @@ export default {
 .item {
   padding: 18px 0;
 }
-
-.box-card {
-  align-content: center;
-  margin: 0 20%;
-}
-</style>
