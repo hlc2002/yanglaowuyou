@@ -1,6 +1,31 @@
 <template>
   <div>
-    <el-table :data="bedList" style="width: 100%">
+    <el-row style="margin-left: 60%">
+      <el-select v-model="bed_lock" placeholder="请选择类床位类型">
+        <el-option
+          v-for="item in options"
+          :key="item.index"
+          :label="item.label"
+          :value="item.value"
+        >
+        </el-option>
+      </el-select>
+      <el-button
+        style="margin-left: 10px"
+        type="primary"
+        size="small"
+        @click="findBedListByLock"
+        >搜索</el-button
+      >
+      <el-button
+        style="margin-left: 10px"
+        type="primary"
+        size="small"
+        @click="getAllBed"
+        >刷新</el-button
+      >
+    </el-row>
+    <el-table :data="show_bedList" style="width: 100%">
       <el-table-column label="房间号" width="180">
         <template slot-scope="scope">
           <span style="margin-left: 10px">{{ scope.row.bed_room_no }}</span>
@@ -19,7 +44,9 @@
       </el-table-column>
       <el-table-column label="当前已有预订" width="180">
         <template slot-scope="scope">
-          <span style="margin-left: 10px">{{ scope.row.bed_lock }}</span>
+          <span style="margin-left: 10px">{{
+            scope.row.bed_lock == true ? "已被使用" : "未被使用"
+          }}</span>
         </template>
       </el-table-column>
       <el-table-column label="住宿老人编号" width="180">
@@ -68,7 +95,7 @@
         ></el-table-column>
         <el-table-column
           property="meal_receipt"
-          label="套餐价格"
+          label="套餐价格/元"
         ></el-table-column>
       </el-table>
     </el-dialog>
@@ -106,7 +133,31 @@ export default {
       token: "",
       user_type: "",
       isOrder: false,
+      bed_lock: null,
+      options: [
+        {
+          index: 1,
+          label: "未被使用",
+          value: false,
+        },
+        {
+          index: 2,
+          label: "已被使用",
+          value: true,
+        },
+      ],
       bedList: [
+        {
+          bed_room_no: 1,
+          bed_no: 1,
+          bed_room_type: "待分配床位",
+          bed_lock: false,
+          bed_elder_id: null,
+          bed_state: true,
+        },
+      ],
+      show_bedList: [],
+      copy_bedList: [
         {
           bed_room_no: 1,
           bed_no: 1,
@@ -133,9 +184,9 @@ export default {
     getAllBed(this.token, this.user_type).then((res) => {
       if (res.code === 200) {
         this.bedList = res.data;
+        this.show_bedList = this.bedList;
       }
     });
-    setTimeout(function () {}, 1000);
     getOrder(this.token, this.user_type).then((res) => {
       if (res.data != null) {
         this.isOrder = res.data.order_pay_state;
@@ -197,6 +248,18 @@ export default {
           });
         }
       });
+    },
+    findBedListByLock() {
+      this.copy_bedList = this.bedList.forEach((element) => {
+        if (element.bed_lock !== this.bed_lock) {
+          element = {};
+        }
+      });
+      this.show_bedList = this.copy_bedList;
+    },
+    getAllBed() {
+      this.show_bedList = this.bedList;
+      this.bed_lock = null;
     },
   },
 };

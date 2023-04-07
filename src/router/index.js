@@ -21,6 +21,16 @@ import userHealth from '@/views/user/logistics/health'
 import userService from '@/views/user/other/service'
 import userLive from '@/views/user/other/live'
 import userHapply from '@/views/user/other/happly'
+import adminBedList from '@/views/admin/bed/bedList'
+import adminDeviceList from '@/views/admin/logistics/deviceList'
+import adminElderList from '@/views/admin/elder/elderList'
+import adminEmployeeList from '@/views/admin/employee/employeeList'
+import adminOrderList from '@/views/admin/order/orderList'
+import adminCustomer from '@/views/admin/customer/customer'
+import adminHapply from '@/views/admin/other/happly'
+import adminWarter from '@/views/admin/other/warter'
+import adminEmail from '@/views/admin/other/email'
+import adminInfo from '@/views/admin/adminInfo'
 import welcome from "@/views/welcome"
 export default new Router({
     routes: [
@@ -33,8 +43,58 @@ export default new Router({
             path: '/admin',
             name: '管理员首页',
             component: adminIndex,
+            redirect: '/admin/warter',
             children: [
-
+                {
+                    path: '/admin/warter',
+                    name: "平台流量可视化",
+                    component: adminWarter
+                },
+                {
+                    path: '/admin/bedList',
+                    name: "床位管理",
+                    component: adminBedList
+                },
+                {
+                    path: '/admin/deviceList',
+                    name: "医药与用具管理",
+                    component: adminDeviceList
+                },
+                {
+                    path: '/admin/elderList',
+                    name: "老人管理",
+                    component: adminElderList
+                },
+                {
+                    path: '/admin/employeeList',
+                    name: "护工管理",
+                    component: adminEmployeeList
+                },
+                {
+                    path: '/admin/orderList',
+                    name: "订单管理",
+                    component: adminOrderList
+                },
+                {
+                    path: '/admin/customer',
+                    name: "咨询管理",
+                    component: adminCustomer
+                },
+                {
+                    path: '/admin/happly',
+                    name: "文娱计划管理",
+                    component: adminHapply
+                },
+                {
+                    path: '/admin/email',
+                    name: "院长邮箱",
+                    component: adminEmail
+                },
+                {
+                    path: '/admin/adminInfo',
+                    name: "个人信息管理",
+                    component: adminInfo
+                }
             ]
         },
         {

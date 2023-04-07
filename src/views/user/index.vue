@@ -45,7 +45,7 @@
         >
       </el-menu>
     </el-header>
-    <el-main style="height: 600px">
+    <el-main style="height: 500px">
       <div>
         <router-view></router-view>
       </div>

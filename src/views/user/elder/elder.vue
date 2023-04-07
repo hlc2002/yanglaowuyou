@@ -108,7 +108,6 @@ export default {
           this.showElder = true;
         }
       });
-      setTimeout(function () {}, 1000);
       getBed(params, this.token, this.user_type).then((res) => {
         if (res.code === 200) {
           this.bed_no = res.data.bed_no;

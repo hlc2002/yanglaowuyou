@@ -7,7 +7,8 @@
           <el-table-column prop="device_id" label="药物编号" width="150" />
           <el-table-column prop="device_name" label="药物名称" width="150" />
           <el-table-column prop="device_count" label="药物余量" width="150" />
-          <el-table-column prop="device_state" label="用药状态" width="150">
+          <el-table-column label="用药状态" width="150">
+            正在启用
           </el-table-column>
         </el-table>
       </el-card>
@@ -86,7 +87,7 @@ export default {
     this.token = sessionStorage.getItem("token");
     this.user_type = sessionStorage.getItem("user_type");
     let device_name = {
-      device_name: "医药",
+      device_name: "",
     };
     getDeviceList(device_name, this.token, this.user_type)
       .then((res) => {
