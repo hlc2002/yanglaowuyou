@@ -23,7 +23,7 @@
       <el-table-column prop="employee_age" label="年龄" width="100" />
       <el-table-column prop="employee_phone" label="电话" width="200" />
       <el-table-column prop="employee_auth_level" label="职级" width="120" />
-      <el-table-column prop="employee_unit" label="岗位" width="120" />
+      <el-table-column prop="employee_unit" label="岗位" width="210" />
       <el-table-column fixed="right" label="操作" width="100">
         <template slot-scope="scope">
           <!-- @click="editState = true" -->

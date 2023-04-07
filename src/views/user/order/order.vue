@@ -84,7 +84,6 @@ export default {
     let elder_id = {
       elder_id: sessionStorage.getItem("elder_id"),
     };
-    setTimeout(function () {}, 1000);
     getElder(elder_id, this.token, this.user_type).then((res) => {
       if (res.code === 200) {
         this.elder_name = res.data.elder_name;

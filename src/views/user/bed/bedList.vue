@@ -68,7 +68,7 @@
         ></el-table-column>
         <el-table-column
           property="meal_receipt"
-          label="套餐价格"
+          label="套餐价格/元"
         ></el-table-column>
       </el-table>
     </el-dialog>
@@ -135,7 +135,6 @@ export default {
         this.bedList = res.data;
       }
     });
-    setTimeout(function () {}, 1000);
     getOrder(this.token, this.user_type).then((res) => {
       if (res.data != null) {
         this.isOrder = res.data.order_pay_state;
